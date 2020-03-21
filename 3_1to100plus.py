@@ -1,1 +1,2 @@
-sum(range(101))
+a = sum(range(101))
+print(a)
