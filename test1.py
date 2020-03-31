@@ -10,11 +10,11 @@ parser.add_argument('--arg3')
 
 args = parser.parse_args()
 
-input_dir_path = "./'arg1'/"
-file_list = os.listdir(r"./'arg1'/")
+input_dir_path = args.arg1
+file_list = os.listdir(args.arg1)
 
-if not os.path.exists('arg2'):
-    os.makedirs('arg2')
+if not os.path.exists(args.arg2):
+    os.makedirs(args.arg2)
 
 for file_name in file_list:
     root, ext = os.path.splitext(file_name)
@@ -24,4 +24,4 @@ for file_name in file_list:
 
         image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-        cv2.imwrite("'arg2'/output.jpg", image_gray)
+        cv2.imwrite("args.arg2/output.jpg", image_gray)
